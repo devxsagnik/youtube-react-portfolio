@@ -1,0 +1,52 @@
+* {
+    scroll-behavior: smooth;
+}
+
+textarea {
+    resize: none !important;
+}
+
+textarea::placeholder {
+    transition: all 0.2s ease-in;
+}
+
+textarea:focus::-webkit-input-placeholder {
+    color: transparent
+}
+
+textarea:focus:-moz-placeholder {
+    color: transparent
+}
+
+textarea:focus:-ms-input-placeholder {
+    color: transparent
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent
+}
+
+input:focus:-moz-placeholder {
+    color: transparent
+}
+
+input:focus::-moz-placeholder {
+    color: transparent
+}
+
+input:focus:-ms-input-placeholder {
+    color: transparent
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(162, 224, 253, 0.829);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(220.55deg, transparent, #8A88FB 30%, #D079EE 100%);
+    border-radius: 6px;
+}
