@@ -1,7 +1,4 @@
 import {
-  facebook,
-  instagram,
-  twitter,
   send,
   shield,
   star,

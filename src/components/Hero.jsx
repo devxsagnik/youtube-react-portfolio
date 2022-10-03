@@ -24,10 +24,11 @@ const Hero = () => {
           <div className="buttons">
             <a
               href="#contact"
-              className="button button1 font-poppins px-[30px] py-[15px] text-xl font-medium relative"
+              className="button button1 font-poppins px-1 pt-[15px] pb-[8px] text-xl text-[#d1d5db] font-medium relative"
               draggable="false"
             >
-              Contact Me
+              Know More{" "}
+              <i className="fa-solid fa-arrow-right text-[18px] hero-arrow"></i>
             </a>
           </div>
         </div>
@@ -39,7 +40,7 @@ const Hero = () => {
         <img
           src={heroImg}
           alt="billing"
-          className="w-[100%] h-[100%] relative z-[5] top-[-6rem]"
+          className="w-[100%] h-[100%] relative z-[5]"
         />
 
         {/* gradient start */}
