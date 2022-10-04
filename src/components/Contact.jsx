@@ -46,7 +46,10 @@ const Contact = () => {
 
   return (
     <>
-      <section id="contact" className={`${styles.paddingY} contact-area`}>
+      <section
+        id="contact"
+        className={`${styles.paddingY} contact-area bg-[#111827]`}
+      >
         <div
           className={`grid grid-cols-12 gap-4 xl:px-0 sm:px-16 px-6 justify-between mb-8 mt-2 xl:mt-6`}
         >

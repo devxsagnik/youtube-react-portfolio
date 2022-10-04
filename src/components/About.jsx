@@ -31,7 +31,10 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className={`${styles.paddingY} about_wrapper`}>
+    <section
+      id="about"
+      className={`${styles.paddingY} about_wrapper bg-[#111827]`}
+    >
       <div
         className={`grid grid-cols-12 gap-4 xl:px-0 sm:px-16 px-6 justify-between mb-8`}
       >
@@ -42,17 +45,10 @@ const About = () => {
             </h2>
           </div>
           <p className={`${styles.paragraph} text-[15px] leading-[25px] mt-5`}>
-            Hello There! My name is{" "}
-            <span className="about_span text-[#08fdd8]">Felix</span> or you can
-            call by my familiar name{" "}
-            <span className="about_span text-[#08fdd8]">Sagnik</span>.I am a
-            self taught programmer who in this lockdown and pandamic learned how
-            frontend development and backend development works.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit temporibus rerum ad corrupti quia architecto excepturi incidunt unde consequatur ab. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, eveniet? Quod ipsa ratione optio possimus non est pariatur nemo qui.
             <br />
             <br />
-            In free hours i like to code different projects and try to learn
-            something new.I have built some discord bots and am too an
-            passionate bot developer.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, quisquam. Explicabo distinctio adipisci accusamus neque placeat odit dicta tempore id, modi magnam? Facilis officia neque voluptatibus itaque ipsam quisquam ipsa.
           </p>
         </div>
         <div className="mlg:col-span-6 smd:col-span-6 col-span-full">
@@ -89,11 +85,7 @@ const About = () => {
           <p
             className={`${styles.paragraph} text-[15px] leading-[25px] mt-3 md:mt-5`}
           >
-            I have skills in over 4 different fields, starting from designing
-            websites, making discord/telegram bots, gaining quite a bit of skill
-            in artificial intelligence.I worked on different languages like
-            Java, Javascript, worked on frontend as well as backend
-            development.With these i can pretty much take on any challenge.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eos rerum, dolor libero id natus rem odit non nulla ratione, deserunt, vel at nostrum error? Odio porro velit eligendi cupiditate blanditiis ducimus necessitatibus earum molestiae.
           </p>
         </div>
         <div className="col-span-full sm:col-span-6 lxl:col-span-4 pb-8 mlg:pb-0 rounded-3xl bg-[#12141c] about-change-div">

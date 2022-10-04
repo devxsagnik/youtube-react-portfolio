@@ -27,6 +27,8 @@ export const navLinks = [
   },
 ];
 
+export const name = "Amit"; //Change this to your own name;
+
 export const skills = [
   { href: "#git_", title: "Git" },
   { href: "#json_", title: "JSON" },

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { close, menu } from '../assets';
-import { navLinks } from '../constants';
+import { navLinks, name } from '../constants';
 
 const Navbar = () => {
 
@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar mt-5">
       <h5 className="h-auto w-auto text-[28px] font-outfit font-extrabold leading-7 text-white">
-        Sagnik<span className="text-red-500 ml-[2px]">.</span>
+        {name}<span className="text-red-500 ml-[2px]">.</span>
       </h5>
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">

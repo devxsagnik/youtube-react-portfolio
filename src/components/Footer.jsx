@@ -1,15 +1,16 @@
 import styles from "../style";
-import { footerLinks, socialMedia } from "../constants";
+import { footerLinks, socialMedia, name } from "../constants";
 
 const Footer = () => {
   return (
     <section
-      className={`${styles.flexCenter} ${styles.paddingY} mx-6 sm:mx-16 xl:mx-0 flex-col`}
+      className={`${styles.flexCenter} ${styles.paddingY} mx-6 sm:mx-16 xl:mx-0 flex-col bg-[#111827]`}
     >
       <div className="text-center footer-logo">
         <a>
           <h5 className="h-auto w-auto text-[28px] font-outfit font-extrabold leading-7 text-white">
-            Sagnik<span className="text-red-500 ml-[2px]">.</span>
+            {name}
+            <span className="text-red-500 ml-[2px]">.</span>
           </h5>
         </a>
 
@@ -32,7 +33,8 @@ const Footer = () => {
 
       <div className="w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]">
         <p className="font-poppins font-normal text-center text-[18px] leading-[27px] text-white">
-          Copyright Ⓒ 2022 cwsagnik.com.
+          Copyright Ⓒ {new Date().getFullYear()}{" "}
+          <span className="text-[#08fdd8]">cwsagnik.com</span>.
         </p>
         <div className="flex flex-row md:mt-0 mt-6">
           {socialMedia.map((social, index) => (
