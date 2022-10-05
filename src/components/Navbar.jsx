@@ -8,8 +8,9 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar mt-5">
-      <h5 className="h-auto w-auto text-[28px] font-outfit font-extrabold leading-7 text-white">
-        {name}<span className="text-red-500 ml-[2px]">.</span>
+      <h5 className="h-auto w-auto text-[28px] font-outfit font-extrabold leading-7 text-white wow animate__animated animate__fadeInLeft">
+        {name}
+        <span className="text-red-500 ml-[2px]">.</span>
       </h5>
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
@@ -18,9 +19,10 @@ const Navbar = () => {
             key={nav.id}
             className={`font-poppins font-medium cursor-pointer text-[18px] ${
               index === navLinks.length - 1 ? "mr-0" : "mr-10"
-            } text-white nav-item`}
+            } text-white nav-item wow animate-`}
           >
-            <a className="nav-link" href={`${nav.link}`}>
+            {console.log(index)}
+            <a className={`nav-link`} href={`${nav.link}`}>
               {nav.title}
             </a>
           </li>

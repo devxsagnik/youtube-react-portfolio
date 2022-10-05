@@ -45,10 +45,17 @@ const About = () => {
             </h2>
           </div>
           <p className={`${styles.paragraph} text-[15px] leading-[25px] mt-5`}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit temporibus rerum ad corrupti quia architecto excepturi incidunt unde consequatur ab. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, eveniet? Quod ipsa ratione optio possimus non est pariatur nemo qui.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+            temporibus rerum ad corrupti quia architecto excepturi incidunt unde
+            consequatur ab. Lorem ipsum dolor, sit amet consectetur adipisicing
+            elit. Temporibus, eveniet? Quod ipsa ratione optio possimus non est
+            pariatur nemo qui.
             <br />
             <br />
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, quisquam. Explicabo distinctio adipisci accusamus neque placeat odit dicta tempore id, modi magnam? Facilis officia neque voluptatibus itaque ipsam quisquam ipsa.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse,
+            quisquam. Explicabo distinctio adipisci accusamus neque placeat odit
+            dicta tempore id, modi magnam? Facilis officia neque voluptatibus
+            itaque ipsam quisquam ipsa.
           </p>
         </div>
         <div className="mlg:col-span-6 smd:col-span-6 col-span-full">
@@ -85,7 +92,10 @@ const About = () => {
           <p
             className={`${styles.paragraph} text-[15px] leading-[25px] mt-3 md:mt-5`}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eos rerum, dolor libero id natus rem odit non nulla ratione, deserunt, vel at nostrum error? Odio porro velit eligendi cupiditate blanditiis ducimus necessitatibus earum molestiae.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eos
+            rerum, dolor libero id natus rem odit non nulla ratione, deserunt,
+            vel at nostrum error? Odio porro velit eligendi cupiditate
+            blanditiis ducimus necessitatibus earum molestiae.
           </p>
         </div>
         <div className="col-span-full sm:col-span-6 lxl:col-span-4 pb-8 mlg:pb-0 rounded-3xl bg-[#12141c] about-change-div">

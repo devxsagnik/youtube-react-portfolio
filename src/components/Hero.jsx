@@ -9,7 +9,7 @@ const Hero = () => {
       className={`bg-[#111827] flex md:flex-row flex-col ${styles.paddingY}`}
     >
       <div
-        className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}
+        className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6 wow animate__animated animate__fadeInLeft`}
       >
         <div className="flex flex-row justify-between items-center w-full">
           <h1 className="flex-1 font-outfit font-bold ss:text-[72px] text-[52px] text-white ss:leading-[100.8px] leading-[75px]">
@@ -36,7 +36,9 @@ const Hero = () => {
       </div>
 
       <div
-        className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}
+        className={`flex-1 flex ${
+          styles.flexCenter
+        } md:my-0 my-10 relative wow animate__animated animate__fadeInRight`}
       >
         <img
           src={heroImg}

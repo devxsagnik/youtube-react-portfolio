@@ -6,6 +6,7 @@ import {
 } from './Pages';
 
 const App = () => {
+
   return (
     <div className="bg-[#111827] w-full overflow-hidden">
       <div className={`${styles.paddingX} ${styles.flexCenter} mb-6`}>
