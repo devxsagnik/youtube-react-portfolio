@@ -1,15 +1,21 @@
 import styles from "../style";
 import { heroImg } from "../assets";
 import { name } from "../constants";
+import { motion } from "framer-motion";
+import { homeVariants, homeBannerVariants } from "../animations";
 
 const Hero = () => {
+
   return (
     <section
       id="home"
       className={`bg-[#111827] flex md:flex-row flex-col ${styles.paddingY}`}
     >
-      <div
-        className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6 wow animate__animated animate__fadeInLeft`}
+      <motion.div
+        variants={homeVariants}
+        animate="visible"
+        initial="hidden"
+        className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}
       >
         <div className="flex flex-row justify-between items-center w-full">
           <h1 className="flex-1 font-outfit font-bold ss:text-[72px] text-[52px] text-white ss:leading-[100.8px] leading-[75px]">
@@ -33,19 +39,20 @@ const Hero = () => {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div
-        className={`flex-1 flex ${
-          styles.flexCenter
-        } md:my-0 my-10 relative wow animate__animated animate__fadeInRight`}
+      <motion.div
+        variants={homeBannerVariants}
+        animate="visible"
+        initial="hidden"
+        className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}
       >
         <img
           src={heroImg}
           alt="billing"
           className="w-[100%] h-[100%] relative z-[5]"
         />
-      </div>
+      </motion.div>
     </section>
   );
 };

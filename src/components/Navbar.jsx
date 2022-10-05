@@ -1,31 +1,64 @@
 import { useState } from "react";
 import { close, menu } from '../assets';
 import { navLinks, name } from '../constants';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
 
   const [toggle, setToggle] = useState(false);
+  const linkVariants = {
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.3,
+        type: "spring",
+      },
+    }),
+    hidden: { opacity: 0, y: "50%" },
+  };
+  const imageVariants = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        delay: 0.2,
+        type: "spring",
+        duration: 1,
+      },
+    },
+    hidden: { opacity: 0, x: "-50%", y: "100%" },
+  };
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar mt-5">
-      <h5 className="h-auto w-auto text-[28px] font-outfit font-extrabold leading-7 text-white wow animate__animated animate__fadeInLeft">
+      <motion.h5
+        variants={imageVariants}
+        animate="visible"
+        initial="hidden"
+        className="h-auto w-auto text-[28px] font-syncopate uppercase font-semibold leading-7 text-white">
         {name}
         <span className="text-red-500 ml-[2px]">.</span>
-      </h5>
+      </motion.h5>
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
-          <li
+          <motion.li
+            custom={index}
+            animate="visible"
+            variants={linkVariants}
+            initial='hidden'
             key={nav.id}
             className={`font-poppins font-medium cursor-pointer text-[18px] ${
               index === navLinks.length - 1 ? "mr-0" : "mr-10"
-            } text-white nav-item wow animate-`}
+            } text-white nav-item`}
           >
             {console.log(index)}
             <a className={`nav-link`} href={`${nav.link}`}>
               {nav.title}
             </a>
-          </li>
+          </motion.li>
         ))}
       </ul>
 

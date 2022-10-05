@@ -15,6 +15,7 @@ module.exports = {
         outfit: ["Outfit", "sans-serif"],
         cartoon: ["Bangers", "cursive"],
         coolvetica: ["Coolvetica", "sans-serif"],
+        syncopate: ["Syncopate", "sans-serif"],
       },
     },
     screens: {

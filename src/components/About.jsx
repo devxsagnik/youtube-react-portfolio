@@ -1,6 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import styles from "../style";
 import { skills, frontExperience, backExperience } from "../constants";
+import { motion } from "framer-motion";
+import { useScroll } from "../contexts/useScroll";
+import { aboutVariants, aboutBannerVariants, skillsVariants } from "../animations";
 
 const About = () => {
   useEffect(() => {
@@ -30,15 +33,22 @@ const About = () => {
     }
   }, []);
 
+  const [element, controls] = useScroll();
+
   return (
     <section
       id="about"
       className={`${styles.paddingY} about_wrapper bg-[#111827]`}
+      ref={element}
     >
       <div
         className={`grid grid-cols-12 gap-4 xl:px-0 sm:px-16 px-6 justify-between mb-8`}
       >
-        <div className="mlg:col-span-6 smd:col-span-6 col-span-full">
+        <motion.div
+          variants={aboutVariants}
+          animate={controls}
+          className="mlg:col-span-6 smd:col-span-6 col-span-full"
+        >
           <div className="items-center w-full">
             <h2 className="text-[#08fdd8] text-[3.2rem] sm:text-[4.5rem] font-poppins leading-[6rem] font-semibold">
               About Me.
@@ -57,9 +67,11 @@ const About = () => {
             dicta tempore id, modi magnam? Facilis officia neque voluptatibus
             itaque ipsam quisquam ipsa.
           </p>
-        </div>
+        </motion.div>
         <div className="mlg:col-span-6 smd:col-span-6 col-span-full">
-          <div
+          <motion.div
+            variants={aboutBannerVariants}
+            animate={controls}
             id="myCanvasContainer"
             className="relative h-full w-full items-center justify-center mlg:top-[-8rem] top-0"
           >
@@ -78,12 +90,18 @@ const About = () => {
                 ))}
               </ul>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       <div className="grid grid-cols-12 gap-4 md:gap-12 gap-y-[2rem] xl:px-0 sm:px-16 px-6 justify-between mb-0 lg:mb-12">
-        <div className="col-span-full mlg:col-span-4">
+        <motion.div
+          variants={skillsVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="col-span-full mlg:col-span-4"
+        >
           <div className="items-center w-full">
             <h2 className="text-[#08fdd8] text-[3.2rem] sm:text-[4.5rem] font-poppins leading-0 md:leading-[6rem] font-semibold">
               Skills & Experience.
@@ -97,7 +115,7 @@ const About = () => {
             vel at nostrum error? Odio porro velit eligendi cupiditate
             blanditiis ducimus necessitatibus earum molestiae.
           </p>
-        </div>
+        </motion.div>
         <div className="col-span-full sm:col-span-6 lxl:col-span-4 pb-8 mlg:pb-0 rounded-3xl bg-[#12141c] about-change-div">
           <div className="items-center w-full mt-6">
             <h2 className="text-[#08fdd8] text-[1.5rem] sm:text-[1.8rem] text-center font-poppins leading-[4rem] sm:leading-[5rem] font-semibold">
