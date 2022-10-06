@@ -2,34 +2,11 @@ import { useState } from "react";
 import { close, menu } from '../assets';
 import { navLinks, name } from '../constants';
 import { motion } from 'framer-motion';
+import { linkVariants, imageVariants } from '../animations';
 
 const Navbar = () => {
 
   const [toggle, setToggle] = useState(false);
-  const linkVariants = {
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.3,
-        type: "spring",
-      },
-    }),
-    hidden: { opacity: 0, y: "50%" },
-  };
-  const imageVariants = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: {
-        delay: 0.2,
-        type: "spring",
-        duration: 1,
-      },
-    },
-    hidden: { opacity: 0, x: "-50%", y: "100%" },
-  };
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar mt-5">
