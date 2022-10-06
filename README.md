@@ -1,4 +1,4 @@
-# Portfolio for All<hr />
+# Portfolio for All
 This is a personal portfolio website made using <b>React.js</b> & <b>tailwind CSS.</b>
 If you want to edit this. Clone this project and edit the files in `/src/components`.<br />
 To run this on localhost
