@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import styles from "../style";
-import { skills, frontExperience, backExperience } from "../constants";
+import { skills, skillsBar } from "../constants";
 import { motion } from "framer-motion";
 import { useScroll } from "../contexts/useScroll";
 import { aboutVariants, aboutBannerVariants, skillsVariants, skillsBanner1Variants, skillsBanner2Variants, perSkillsVariants } from "../animations";
@@ -13,7 +13,7 @@ const About = () => {
       textFont: "Poppins, sans-serif",
       outlineThickness: 0.5,
       outlineColour: "#FE0853",
-      maxSpeed: 0.06,
+      maxSpeed: 0.08,
       freezeActive: true,
       shuffleTags: true,
       shape: "sphere",
@@ -21,7 +21,7 @@ const About = () => {
       wheelZoom: false,
       noSelect: true,
       freezeDecel: true,
-      fadeIn: 3000,
+      fadeIn: 2000,
       initial: [0.3, -0.1],
       depth: 1.1,
     };
@@ -30,6 +30,7 @@ const About = () => {
     } catch (e) {
       console.log("Canvas error.");
       console.log(e);
+      TagCanvas.Stop();
     }
   }, []);
 
@@ -84,7 +85,7 @@ const About = () => {
             <div id="taglist" style={{ display: "none" }}>
               <ul>
                 {skills.map((skill) => (
-                  <li key={skill.title}>
+                  <li key={skill}>
                     <a href={skill.href}>{skill.title}</a>
                   </li>
                 ))}
@@ -100,7 +101,7 @@ const About = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="col-span-full mlg:col-span-4"
+          className="col-span-full md:col-span-6"
         >
           <div className="items-center w-full">
             <h2 className="text-[#08fdd8] text-[3.2rem] sm:text-[4.5rem] font-poppins leading-0 md:leading-[6rem] font-semibold">
@@ -121,9 +122,22 @@ const About = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="col-span-full sm:col-span-6 lxl:col-span-4 pb-8 mlg:pb-0 rounded-3xl bg-[#12141c] about-change-div"
+          className="col-span-full md:col-span-6 pb-8 mlg:pb-0 rounded-3xl about-change-div"
         >
-          <div className="items-center w-full mt-6">
+          {skillsBar.map((skill, index) => (
+            <div className="line relative my-4">
+              <div className="info flex justify-between items-center">
+                <span className="font-semibold font-syncopate text-[18px] text-[white] uppercase">
+                  {skill.name}
+                </span>
+                <span className="font-semibold font-syncopate text-[18px] text-[white] uppercase">{skill.progress}%</span>
+              </div>
+              <div
+                className={`bars relative bg-[lightgrey] h-[5px] w-full my-4 rounded-lg before:absolute before:h-full before:content-[''] before:w-[${skill.progress}%] before:bg-[#08fdd8]`}
+              ></div>
+            </div>
+          ))}
+          {/* <div className="items-center w-full mt-6">
             <h2 className="text-[#08fdd8] text-[1.5rem] sm:text-[1.8rem] text-center font-poppins leading-[4rem] sm:leading-[5rem] font-semibold">
               Frontend.
             </h2>
@@ -149,9 +163,9 @@ const About = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </div> */}
         </motion.div>
-        <motion.div
+        {/* <motion.div
           variants={skillsBanner2Variants}
           initial="hidden"
           whileInView="visible"
@@ -185,7 +199,7 @@ const About = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

@@ -167,21 +167,7 @@
   }
 }
 
-.about_wrapper h2 .blast {
-  display: inline-block;
-  letter-spacing: -0.15rem;
-  -webkit-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
 
-.about_wrapper .about-change-div>* {
-  transition: transform 500ms ease;
-}
-
-.about_wrapper .about-change-div:hover > * {
-  transform: translateY(-4%);
-}
 
 .contact-area .contact-form input,
 .contact-area .contact-form input,

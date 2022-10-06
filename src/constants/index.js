@@ -63,58 +63,23 @@ export const skills = [
   { href: "#hardhat_", title: "Hardhat" },
 ];
 
-export const frontExperience = [
+export const skillsBar = [
   {
-    name: "React Js",
-    progress: "Experienced",
+    name: "Front End Development",
+    progress: "90",
   },
   {
-    name: "React Js",
-    progress: "Experienced",
+    name: "efeg End Development",
+    progress: "75",
   },
   {
-    name: "React Js",
-    progress: "Experienced",
+    name: "Full End Development",
+    progress: "82",
   },
   {
-    name: "React Js",
-    progress: "Experienced",
-  },
-  {
-    name: "React Js",
-    progress: "Experienced",
-  },
-  {
-    name: "React Js",
-    progress: "Experienced",
+    name: "Back End Development",
+    progress: "54",
   }
-];
-
-export const backExperience = [
-  {
-    name: "React Js",
-    progress: "Experienced",
-  },
-  {
-    name: "React Js",
-    progress: "Experienced",
-  },
-  {
-    name: "React Js",
-    progress: "Experienced",
-  },
-  {
-    name: "React Js",
-    progress: "Experienced",
-  },
-  {
-    name: "React Js",
-    progress: "Experienced",
-  },
-  {
-    name: "React Js",
-    progress: "Experienced",
-  },
 ];
 
 export const features = [

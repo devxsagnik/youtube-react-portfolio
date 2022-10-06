@@ -31,7 +31,6 @@ const Navbar = () => {
               index === navLinks.length - 1 ? "mr-0" : "mr-10"
             } text-white nav-item`}
           >
-            {console.log(index)}
             <a className={`nav-link`} href={`${nav.link}`}>
               {nav.title}
             </a>

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import styles from "../../style";
-import { skills, frontExperience, backExperience } from "../../constants";
+import { skills } from "../../constants";
 
 const About = () => {
   useEffect(() => {
@@ -96,7 +96,7 @@ const About = () => {
             development.With these i can pretty much take on any challenge.
           </p>
         </div>
-        <div className="col-span-full sm:col-span-6 lxl:col-span-4 pb-8 mlg:pb-0 rounded-3xl bg-[#12141c] about-change-div">
+        {/* <div className="col-span-full sm:col-span-6 lxl:col-span-4 pb-8 mlg:pb-0 rounded-3xl bg-[#12141c] about-change-div">
           <div className="items-center w-full mt-6">
             <h2 className="text-[#08fdd8] text-[1.5rem] sm:text-[1.8rem] text-center font-poppins leading-[4rem] sm:leading-[5rem] font-semibold">
               Frontend.
@@ -139,7 +139,7 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
+            </div> */ }
       </div>
     </section>
   );
