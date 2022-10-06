@@ -3,7 +3,7 @@ import styles from "../style";
 import { skills, frontExperience, backExperience } from "../constants";
 import { motion } from "framer-motion";
 import { useScroll } from "../contexts/useScroll";
-import { aboutVariants, aboutBannerVariants, skillsVariants } from "../animations";
+import { aboutVariants, aboutBannerVariants, skillsVariants, skillsBanner1Variants, skillsBanner2Variants, perSkillsVariants } from "../animations";
 
 const About = () => {
   useEffect(() => {
@@ -116,7 +116,13 @@ const About = () => {
             blanditiis ducimus necessitatibus earum molestiae.
           </p>
         </motion.div>
-        <div className="col-span-full sm:col-span-6 lxl:col-span-4 pb-8 mlg:pb-0 rounded-3xl bg-[#12141c] about-change-div">
+        <motion.div
+          variants={skillsBanner1Variants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="col-span-full sm:col-span-6 lxl:col-span-4 pb-8 mlg:pb-0 rounded-3xl bg-[#12141c] about-change-div"
+        >
           <div className="items-center w-full mt-6">
             <h2 className="text-[#08fdd8] text-[1.5rem] sm:text-[1.8rem] text-center font-poppins leading-[4rem] sm:leading-[5rem] font-semibold">
               Frontend.
@@ -124,7 +130,14 @@ const About = () => {
           </div>
           <div className="grid grid-cols-2 gap-1 xs:gap[2rem] mt-8 ml-7 xs:ml-[4.5rem] sm:ml-9 md:ml-[5rem] lxl:ml-9 items-center gap-y-[2rem]">
             {frontExperience.map((skill, index) => (
-              <div className="flex gap-3">
+              <motion.div
+                variants={perSkillsVariants}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="flex gap-3"
+              >
                 <i className="bx bxs-badge-check text-cyan-400 mt-[6px] hover:text-[#08fdd8] transition-all duration-300 ease-in-out cursor-pointer"></i>
                 <div>
                   <h4 className="text-white font-poppins hover:text-[#08fdd8] font-semibold transition-all duration-300 ease-in-out cursor-pointer">
@@ -134,11 +147,17 @@ const About = () => {
                     {skill.progress}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
-        <div className="col-span-full sm:col-span-6 lxl:col-span-4 pb-8 mlg:pb-0 rounded-3xl bg-[#12141c] about-change-div">
+        </motion.div>
+        <motion.div
+          variants={skillsBanner2Variants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="col-span-full sm:col-span-6 lxl:col-span-4 pb-8 mlg:pb-0 rounded-3xl bg-[#12141c] about-change-div"
+        >
           <div className="items-center w-full mt-6">
             <h2 className="text-[#08fdd8] text-[1.5rem] sm:text-[1.8rem] text-center font-poppins leading-[4rem] sm:leading-[5rem] font-semibold">
               Backend.
@@ -146,7 +165,14 @@ const About = () => {
           </div>
           <div className="grid grid-cols-2 gap-1 xs:gap[2rem] mt-8 ml-7 xs:ml-[4.5rem] sm:ml-9 md:ml-[5rem] lxl:ml-9 items-center gap-y-[2rem]">
             {backExperience.map((skill, index) => (
-              <div className="flex gap-3">
+              <motion.div
+                variants={perSkillsVariants}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="flex gap-3"
+              >
                 <i className="bx bxs-badge-check text-cyan-400 mt-[6px] hover:text-[#08fdd8] transition-all duration-300 ease-in-out cursor-pointer"></i>
                 <div>
                   <h4 className="text-white font-poppins hover:text-[#08fdd8] transition-all duration-300 ease-in-out font-semibold cursor-pointer">
@@ -156,10 +182,10 @@ const About = () => {
                     {skill.progress}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

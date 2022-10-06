@@ -77,3 +77,54 @@ export const skillsVariants = {
     y: "50%",
   },
 };
+
+export const skillsBanner1Variants = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.03,
+      type: "spring",
+      duration: 0.8,
+      bounce: 0.4,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    y: "100%",
+  },
+};
+
+export const skillsBanner2Variants = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.08,
+      type: "spring",
+      duration: 0.8,
+      bounce: 0.4,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    y: "100%",
+  },
+};
+
+export const perSkillsVariants = {
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.03,
+      type: "spring",
+      duration: 0.8,
+      bounce: 0.4,
+    },
+  }),
+  hidden: {
+    opacity: 0,
+    y: "100%",
+  },
+};
