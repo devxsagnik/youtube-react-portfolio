@@ -1,9 +1,26 @@
-import { useEffect, useRef } from "react";
+import {
+  useEffect,
+  useRef
+} from "react";
 import styles from "../style";
-import { skills, skillsBar } from "../constants";
-import { motion } from "framer-motion";
-import { useScroll } from "../contexts/useScroll";
-import { aboutVariants, aboutBannerVariants, skillsVariants, skillsBanner1Variants, skillsBanner2Variants, perSkillsVariants } from "../animations";
+import {
+  skills,
+  skillsBar
+} from "../constants";
+import {
+  motion
+} from "framer-motion";
+import {
+  useScroll
+} from "../contexts/useScroll";
+import {
+  aboutVariants,
+  aboutBannerVariants,
+  skillsVariants,
+  skillsBanner1Variants,
+  skillsBanner2Variants,
+  perSkillsVariants
+} from "../animations";
 
 const About = () => {
   useEffect(() => {
@@ -34,22 +51,23 @@ const About = () => {
     }
   }, []);
 
-  const [element, controls] = useScroll();
+  const [element,
+    controls] = useScroll();
 
   return (
     <section
       id="about"
       className={`${styles.paddingY} about_wrapper bg-[#111827]`}
       ref={element}
-    >
+      >
       <div
         className={`grid grid-cols-12 gap-4 xl:px-0 sm:px-16 px-6 justify-between mb-8`}
-      >
+        >
         <motion.div
           variants={aboutVariants}
           animate={controls}
           className="mlg:col-span-6 smd:col-span-6 col-span-full"
-        >
+          >
           <div className="items-center w-full">
             <h2 className="text-[#08fdd8] text-[3.2rem] sm:text-[4.5rem] font-poppins leading-[6rem] font-semibold">
               About Me.
@@ -75,20 +93,20 @@ const About = () => {
             animate={controls}
             id="myCanvasContainer"
             className="relative h-full w-full items-center justify-center mlg:top-[-8rem] top-0"
-          >
+            >
             <canvas
               width="500"
               height="500"
               id="tagcanvas"
               className="mx-auto w-full"
-            ></canvas>
-            <div id="taglist" style={{ display: "none" }}>
+              ></canvas>
+            <div id="taglist" style={ { display: "none" }}>
               <ul>
                 {skills.map((skill) => (
-                  <li key={skill}>
+                <li key={skill}>
                     <a href={skill.href}>{skill.title}</a>
                   </li>
-                ))}
+              ))}
               </ul>
             </div>
           </motion.div>
@@ -100,9 +118,9 @@ const About = () => {
           variants={skillsVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={ { once: true }}
           className="col-span-full md:col-span-6"
-        >
+          >
           <div className="items-center w-full">
             <h2 className="text-[#08fdd8] text-[3.2rem] sm:text-[4.5rem] font-poppins leading-0 md:leading-[6rem] font-semibold">
               Skills & Experience.
@@ -110,7 +128,7 @@ const About = () => {
           </div>
           <p
             className={`${styles.paragraph} text-[15px] leading-[25px] mt-3 md:mt-5`}
-          >
+            >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eos
             rerum, dolor libero id natus rem odit non nulla ratione, deserunt,
             vel at nostrum error? Odio porro velit eligendi cupiditate
@@ -121,85 +139,28 @@ const About = () => {
           variants={skillsBanner1Variants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={ { once: true }}
           className="col-span-full md:col-span-6 pb-8 mlg:pb-0 rounded-3xl about-change-div"
-        >
+          >
           {skillsBar.map((skill, index) => (
             <div className="line relative my-4">
               <div className="info flex justify-between items-center">
                 <span className="font-semibold font-syncopate text-[18px] text-[white] uppercase">
                   {skill.name}
                 </span>
-                <span className="font-semibold font-syncopate text-[18px] text-[white] uppercase">{skill.progress}%</span>
-              </div>
+                <span className="font-semibold font-syncopate text-[18px] text-[white] uppercase">{skill.progress}</span>
+            </div>
               <div
-                className={`bars relative bg-[lightgrey] h-[5px] w-full my-4 rounded-lg before:absolute before:h-full before:content-[''] before:w-[${skill.progress}%] before:bg-[#08fdd8]`}
-              ></div>
+              className={`bars relative bg-[lightgrey] h-[5px] w-full my-4 rounded-lg`}
+              >
+              <div className={`absolute h-[5px] bg-[#08fdd8] overflow-hidden`}
+                style={ { width: `${skill.progress}` }}
+                >
+              </div>
+            </div>
             </div>
           ))}
-          {/* <div className="items-center w-full mt-6">
-            <h2 className="text-[#08fdd8] text-[1.5rem] sm:text-[1.8rem] text-center font-poppins leading-[4rem] sm:leading-[5rem] font-semibold">
-              Frontend.
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 gap-1 xs:gap[2rem] mt-8 ml-7 xs:ml-[4.5rem] sm:ml-9 md:ml-[5rem] lxl:ml-9 items-center gap-y-[2rem]">
-            {frontExperience.map((skill, index) => (
-              <motion.div
-                variants={perSkillsVariants}
-                custom={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="flex gap-3"
-              >
-                <i className="bx bxs-badge-check text-cyan-400 mt-[6px] hover:text-[#08fdd8] transition-all duration-300 ease-in-out cursor-pointer"></i>
-                <div>
-                  <h4 className="text-white font-poppins hover:text-[#08fdd8] font-semibold transition-all duration-300 ease-in-out cursor-pointer">
-                    {skill.name}
-                  </h4>
-                  <p className={`${styles.paraExp} leading-[25px]`}>
-                    {skill.progress}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div> */}
         </motion.div>
-        {/* <motion.div
-          variants={skillsBanner2Variants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="col-span-full sm:col-span-6 lxl:col-span-4 pb-8 mlg:pb-0 rounded-3xl bg-[#12141c] about-change-div"
-        >
-          <div className="items-center w-full mt-6">
-            <h2 className="text-[#08fdd8] text-[1.5rem] sm:text-[1.8rem] text-center font-poppins leading-[4rem] sm:leading-[5rem] font-semibold">
-              Backend.
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 gap-1 xs:gap[2rem] mt-8 ml-7 xs:ml-[4.5rem] sm:ml-9 md:ml-[5rem] lxl:ml-9 items-center gap-y-[2rem]">
-            {backExperience.map((skill, index) => (
-              <motion.div
-                variants={perSkillsVariants}
-                custom={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="flex gap-3"
-              >
-                <i className="bx bxs-badge-check text-cyan-400 mt-[6px] hover:text-[#08fdd8] transition-all duration-300 ease-in-out cursor-pointer"></i>
-                <div>
-                  <h4 className="text-white font-poppins hover:text-[#08fdd8] transition-all duration-300 ease-in-out font-semibold cursor-pointer">
-                    {skill.name}
-                  </h4>
-                  <p className={`${styles.paraExp} leading-[25px]`}>
-                    {skill.progress}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div> */}
       </div>
     </section>
   );
