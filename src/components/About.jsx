@@ -151,7 +151,7 @@ const About = () => {
                 <span className="font-semibold font-syncopate text-[18px] text-[white] uppercase">{skill.progress}</span>
             </div>
               <div
-              className={`bars relative bg-[lightgrey] h-[5px] w-full my-4 rounded-lg`}
+              className={`bars relative bg-[lightgrey] h-[5px] w-full my-4 rounded-full`}
               >
               <div className={`absolute h-[5px] bg-[#08fdd8] overflow-hidden`}
                 style={ { width: `${skill.progress}` }}
