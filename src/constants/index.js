@@ -66,22 +66,18 @@ export const skills = [
 export const skillsBar = [
   {
     name: "Front End Development",
-    skillClass: "front",
     progress: "90%",
   },
   {
-    name: "efeg End Development",
-    skillClass: "ekkg",
+    name: "Back End Development",
     progress: "70%",
   },
   {
-    name: "Full End Development",
-    skillClass: "full",
+    name: "ReactJS",
     progress: "80%",
   },
   {
-    name: "Back End Development",
-    skillClass: "back",
+    name: "Angular",
     progress: "54%",
   },
 ];

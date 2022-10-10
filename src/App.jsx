@@ -15,18 +15,10 @@ import {
   Contact,
   Error
 } from './Pages';
-import {
-  useState,
-  useEffect
-} from "react";
-import {
-  PulseLoader
-} from "react-spinners/PulseLoader";
 
 const App = () => {
   
   return (
-    <>
     <div className="bg-[#111827] w-full overflow-hidden">
         <div className={`${styles.paddingX} ${styles.flexCenter} mb-6`}>
         <div className={`${styles.boxWidth} z-40`}>

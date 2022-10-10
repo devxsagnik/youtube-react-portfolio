@@ -17,9 +17,7 @@ import {
   aboutVariants,
   aboutBannerVariants,
   skillsVariants,
-  skillsBanner1Variants,
-  skillsBanner2Variants,
-  perSkillsVariants
+  skillsBannerVariants,
 } from "../animations";
 
 const About = () => {
@@ -59,15 +57,15 @@ const About = () => {
       id="about"
       className={`${styles.paddingY} about_wrapper bg-[#111827]`}
       ref={element}
-      >
+    >
       <div
         className={`grid grid-cols-12 gap-4 xl:px-0 sm:px-16 px-6 justify-between mb-8`}
-        >
+      >
         <motion.div
           variants={aboutVariants}
           animate={controls}
           className="mlg:col-span-6 smd:col-span-6 col-span-full"
-          >
+        >
           <div className="items-center w-full">
             <h2 className="text-[#08fdd8] text-[3.2rem] sm:text-[4.5rem] font-poppins leading-[6rem] font-semibold">
               About Me.
@@ -93,20 +91,20 @@ const About = () => {
             animate={controls}
             id="myCanvasContainer"
             className="relative h-full w-full items-center justify-center mlg:top-[-8rem] top-0"
-            >
+          >
             <canvas
               width="500"
               height="500"
               id="tagcanvas"
               className="mx-auto w-full"
-              ></canvas>
-            <div id="taglist" style={ { display: "none" }}>
+            ></canvas>
+            <div id="taglist" style={{ display: "none" }}>
               <ul>
                 {skills.map((skill) => (
-                <li key={skill}>
+                  <li key={skill}>
                     <a href={skill.href}>{skill.title}</a>
                   </li>
-              ))}
+                ))}
               </ul>
             </div>
           </motion.div>
@@ -118,9 +116,9 @@ const About = () => {
           variants={skillsVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={ { once: true }}
+          viewport={{ once: true }}
           className="col-span-full md:col-span-6"
-          >
+        >
           <div className="items-center w-full">
             <h2 className="text-[#08fdd8] text-[3.2rem] sm:text-[4.5rem] font-poppins leading-0 md:leading-[6rem] font-semibold">
               Skills & Experience.
@@ -128,7 +126,7 @@ const About = () => {
           </div>
           <p
             className={`${styles.paragraph} text-[15px] leading-[25px] mt-3 md:mt-5`}
-            >
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eos
             rerum, dolor libero id natus rem odit non nulla ratione, deserunt,
             vel at nostrum error? Odio porro velit eligendi cupiditate
@@ -136,28 +134,33 @@ const About = () => {
           </p>
         </motion.div>
         <motion.div
-          variants={skillsBanner1Variants}
+          variants={skillsBannerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={ { once: true }}
+          viewport={{ once: true }}
           className="col-span-full md:col-span-6 pb-8 mlg:pb-0 rounded-3xl about-change-div"
-          >
+        >
           {skillsBar.map((skill, index) => (
-            <div className="line relative my-4">
+            <div className="line relative py-3">
               <div className="info flex justify-between items-center">
                 <span className="font-semibold font-syncopate text-[18px] text-[white] uppercase">
                   {skill.name}
                 </span>
-                <span className="font-semibold font-syncopate text-[18px] text-[white] uppercase">{skill.progress}</span>
-            </div>
-              <div
-              className={`bars relative bg-[lightgrey] h-[5px] w-full my-4 rounded-full`}
-              >
-              <div className={`absolute h-[5px] bg-[#08fdd8] overflow-hidden`}
-                style={ { width: `${skill.progress}` }}
-                >
+                <span className="font-semibold font-syncopate text-[18px] text-[white] uppercase">
+                  {skill.progress}
+                </span>
               </div>
-            </div>
+              <div
+                className={`bars relative bg-[#595858] h-[5px] w-full my-4 rounded-full`}
+              >
+                <motion.div
+                  initial={{ width: 0 }}
+                  className={`absolute h-[5px] bg-[#08fdd8] rounded-full overflow-hidden`}
+                  whileInView={{ width: `${skill.progress}` }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 4.5, type: "spring", delay: index * 0.2 }}
+                ></motion.div>
+              </div>
             </div>
           ))}
         </motion.div>
