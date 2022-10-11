@@ -157,18 +157,6 @@
   transform: translateX(5px);
 }
 
-@-webkit-keyframes hue {
-  from {
-    -webkit-filter: hue-rotate(0deg);
-  }
-
-  to {
-    -webkit-filter: hue-rotate(-360deg);
-  }
-}
-
-
-
 .contact-area .contact-form input,
 .contact-area .contact-form input,
 .contact-area .contact-form textarea {
@@ -284,11 +272,6 @@
   pointer-events: none;
 }
 
-.map-wrap {
-  height: 100%;
-  width: 100%;
-}
-
 .leaflet-container {
   width: 100%;
   height: 80vh;
@@ -299,23 +282,6 @@
   .leaflet-container {
     height: 50vh;
   }
-}
-
-.feature-card:hover {
-  background: var(--black-gradient);
-  box-shadow: var(--card-shadow);
-}
-
-.feedback-container .feedback-card:last-child {
-  margin-right: 0px;
-}
-
-.feedback-card {
-  background: transparent;
-}
-
-.feedback-card:hover {
-  background: var(--black-gradient);
 }
 
 .blue__gradient {

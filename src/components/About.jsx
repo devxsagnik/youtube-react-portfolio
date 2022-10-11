@@ -1,12 +1,8 @@
-import {
-  useEffect,
-  useRef
-} from "react";
 import styles from "../style";
 import {
-  skills,
   skillsBar
 } from "../constants";
+import { aboutImg } from "../assets";
 import {
   motion
 } from "framer-motion";
@@ -21,33 +17,6 @@ import {
 } from "../animations";
 
 const About = () => {
-  useEffect(() => {
-    const TagCanvas = window.TagCanvas;
-    const tagCanvasOptions = {
-      textColour: "#08FDD8",
-      textFont: "Poppins, sans-serif",
-      outlineThickness: 0.5,
-      outlineColour: "#FE0853",
-      maxSpeed: 0.08,
-      freezeActive: true,
-      shuffleTags: true,
-      shape: "sphere",
-      zoom: 0.8,
-      wheelZoom: false,
-      noSelect: true,
-      freezeDecel: true,
-      fadeIn: 2000,
-      initial: [0.3, -0.1],
-      depth: 1.1,
-    };
-    try {
-      TagCanvas.Start("tagcanvas", "taglist", tagCanvasOptions);
-    } catch (e) {
-      console.log("Canvas error.");
-      console.log(e);
-      TagCanvas.Stop();
-    }
-  }, []);
 
   const [element,
     controls] = useScroll();
@@ -64,7 +33,7 @@ const About = () => {
         <motion.div
           variants={aboutVariants}
           animate={controls}
-          className="mlg:col-span-6 smd:col-span-6 col-span-full"
+          className="md:col-span-6 col-span-full"
         >
           <div className="items-center w-full">
             <h2 className="text-[#08fdd8] text-[3.2rem] sm:text-[4.5rem] font-poppins leading-[6rem] font-semibold">
@@ -85,30 +54,13 @@ const About = () => {
             itaque ipsam quisquam ipsa.
           </p>
         </motion.div>
-        <div className="mlg:col-span-6 smd:col-span-6 col-span-full">
-          <motion.div
-            variants={aboutBannerVariants}
-            animate={controls}
-            id="myCanvasContainer"
-            className="relative h-full w-full items-center justify-center mlg:top-[-8rem] top-0"
-          >
-            <canvas
-              width="500"
-              height="500"
-              id="tagcanvas"
-              className="mx-auto w-full"
-            ></canvas>
-            <div id="taglist" style={{ display: "none" }}>
-              <ul>
-                {skills.map((skill) => (
-                  <li key={skill}>
-                    <a href={skill.href}>{skill.title}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
-        </div>
+        <motion.div
+          variants={aboutBannerVariants}
+          animate={controls}
+          className="md:col-span-6 col-span-full items-center pl-[5rem]"
+        >
+          <img className="h-full" src={aboutImg} alt="about-img" />
+        </motion.div>
       </div>
 
       <div className="grid grid-cols-12 gap-4 md:gap-12 gap-y-[2rem] xl:px-0 sm:px-16 px-6 justify-between mb-0 lg:mb-12">
@@ -158,7 +110,11 @@ const About = () => {
                   className={`absolute h-[5px] bg-[#08fdd8] rounded-full overflow-hidden`}
                   whileInView={{ width: `${skill.progress}` }}
                   viewport={{ once: true }}
-                  transition={{ duration: 4.5, type: "spring", delay: index * 0.2 }}
+                  transition={{
+                    duration: 4.5,
+                    type: "spring",
+                    delay: index * 0.2,
+                  }}
                 ></motion.div>
               </div>
             </div>

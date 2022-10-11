@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
 import styles from "../../style";
-import { skills, skillsBar } from "../../constants";
+import { skillsBar } from "../../constants";
+import { aboutImg } from "../../assets";
 import { motion } from "framer-motion";
 import { useScroll } from "../../contexts/useScroll";
 import {
@@ -11,34 +11,6 @@ import {
 } from "../../animations";
 
 const About = () => {
-  useEffect(() => {
-    const TagCanvas = window.TagCanvas;
-    const tagCanvasOptions = {
-      textColour: "#08FDD8",
-      textFont: "Poppins, sans-serif",
-      outlineThickness: 0.5,
-      outlineColour: "#FE0853",
-      maxSpeed: 0.08,
-      freezeActive: true,
-      shuffleTags: true,
-      shape: "sphere",
-      zoom: 0.8,
-      wheelZoom: false,
-      noSelect: true,
-      freezeDecel: true,
-      fadeIn: 2000,
-      initial: [0.3, -0.1],
-      depth: 1.1,
-    };
-    try {
-      TagCanvas.Start("tagcanvas", "taglist", tagCanvasOptions);
-    } catch (e) {
-      console.log("Canvas error.");
-      console.log(e);
-      TagCanvas.Stop();
-    }
-  }, []);
-
   const [element, controls] = useScroll();
 
   return (
@@ -74,28 +46,13 @@ const About = () => {
             itaque ipsam quisquam ipsa.
           </p>
         </motion.div>
-        <div className="mlg:col-span-6 smd:col-span-6 col-span-full">
+        <div className="md:col-span-6 col-span-full">
           <motion.div
             variants={aboutBannerVariants}
             animate={controls}
-            id="myCanvasContainer"
-            className="relative h-full w-full items-center justify-center mlg:top-[-8rem] top-0"
+            className="relative"
           >
-            <canvas
-              width="500"
-              height="500"
-              id="tagcanvas"
-              className="mx-auto w-full"
-            ></canvas>
-            <div id="taglist" style={{ display: "none" }}>
-              <ul>
-                {skills.map((skill) => (
-                  <li key={skill}>
-                    <a href={skill.href}>{skill.title}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <img className="w-full h-full relative" src={aboutImg} alt="about-img" />
           </motion.div>
         </div>
       </div>
