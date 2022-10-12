@@ -50,9 +50,9 @@ const About = () => {
           <motion.div
             variants={aboutBannerVariants}
             animate={controls}
-            className="relative"
+            className="md:col-span-6 col-span-full relative mlg:top-[-8rem] top-0"
           >
-            <img className="w-full h-full relative" src={aboutImg} alt="about-img" />
+            <img className="h-full w-full " src={aboutImg} alt="about-img" />
           </motion.div>
         </div>
       </div>

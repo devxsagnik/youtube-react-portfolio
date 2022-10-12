@@ -28,7 +28,7 @@ const About = () => {
       ref={element}
     >
       <div
-        className={`grid grid-cols-12 gap-4 xl:px-0 sm:px-16 px-6 justify-between mb-8`}
+        className={`grid grid-cols-12 gap-4 xl:px-0 sm:px-16 px-6 justify-between my-8 py-4`}
       >
         <motion.div
           variants={aboutVariants}
@@ -57,9 +57,9 @@ const About = () => {
         <motion.div
           variants={aboutBannerVariants}
           animate={controls}
-          className="md:col-span-6 col-span-full items-center pl-[5rem]"
+          className="md:col-span-6 col-span-full relative mlg:top-[-8rem] top-0"
         >
-          <img className="h-full" src={aboutImg} alt="about-img" />
+          <img className="h-full w-full" src={aboutImg} alt="about-img" />
         </motion.div>
       </div>
 

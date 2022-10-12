@@ -4,29 +4,53 @@ import "react-toastify/dist/ReactToastify.css";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "../../style";
+import { motion } from "framer-motion";
+import { position } from "../../constants";
+import { contactFormVariants, contactMapVariants } from "../../animations";
 
 const Contact = () => {
   const form = useRef();
+
   const sendEmail = (e) => {
+    
     e.preventDefault();
+
+    const emailjsServiceCode = import.meta.env.VITE_EMAILJS_SERVICE;
+    const emailjsTemplateCode = import.meta.env.VITE_EMAILJS_TEMPLATE;
+    const emailjsClientId = import.meta.env.VITE_EMAILJS_ID;
+
+    toast.info("Please wait while we are processing your message!!", {
+      position: "bottom-right",
+      theme: "colored",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+    });
+    
     emailjs
       .sendForm(
-        "service_0p94dhe",
-        "template_243tfbq",
+        emailjsServiceCode,
+        emailjsTemplateCode,
         form.current,
-        "RAUVCikOmrcrRxOTa"
+        emailjsClientId
       )
       .then(
         () => {
-          toast.success("Your e-mail has been successfully sent. Thank You!", {
-            position: "bottom-right",
-            theme: "colored",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-          });
-          e.target.reset();
+          setTimeout(() => {
+            toast.success(
+              "Your e-mail has been successfully sent. Thank You!",
+              {
+                position: "bottom-right",
+                icon: "🚀",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+              }
+            );
+            e.target.reset();
+          }, 5000);
         },
         () => {
           toast.error(
@@ -34,7 +58,7 @@ const Contact = () => {
             {
               position: "bottom-right",
               theme: "colored",
-              autoClose: 5000,
+              autoClose: 3000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,
@@ -51,7 +75,11 @@ const Contact = () => {
           className={`grid grid-cols-12 gap-4 xl:px-0 sm:px-16 px-6 justify-between mb-8 mt-2 xl:mt-6`}
         >
           <div className="lg:col-span-6 col-span-full mb-6">
-            <div className="items-center w-full">
+            <motion.div
+              variants={contactFormVariants}
+              initial="hidden"
+              animate="show"
+              className="items-center w-full">
               <h2 className="text-[#08fdd8] text-[3.2rem] sm:text-[4.5rem] font-coolvetica tracking-wide leading-[6rem] font-medium">
                 Contact Me.
               </h2>
@@ -134,18 +162,22 @@ const Contact = () => {
                   </div>
                 </form>
               </div>
-            </div>
+            </motion.div>
           </div>
-          <div className="col-span-full lg:col-span-6">
+          <motion.div
+            variants={contactMapVariants}
+            initial="hidden"
+            animate="show"
+            className="col-span-full lg:col-span-6">
             <div className="map-wrap w-full px-6 sm:px-0">
-              <MapContainer center={[22.4881888235, 88.3565324968]} zoom={13}>
+              <MapContainer center={[position[0].lat, position[0].long]} zoom={13}>
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                <Marker position={[22.4881888235, 88.3565324968]}>
+                <Marker position={[position[0].lat, position[0].long]}>
                   <Popup>Wanna have a coffee, come over here ;)</Popup>
                 </Marker>
               </MapContainer>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
       <ToastContainer />

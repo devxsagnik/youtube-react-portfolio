@@ -119,3 +119,37 @@ export const skillsBannerVariants = {
     y: "100%",
   },
 };
+
+export const contactFormVariants = {
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.03,
+      type: "spring",
+      duration: 1,
+      bounce: 0.4,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    y: "100%",
+  },
+};
+export const contactMapVariants = {
+  show: {
+    opacity: 1,
+    y: 0,
+    x: 0,
+    transition: {
+      delay: 0.2,
+      type: "spring",
+      duration: 1,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    x: "100%",
+    y: "100%",
+  },
+};
