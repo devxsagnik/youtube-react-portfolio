@@ -17,12 +17,13 @@ _NOTE: if you have yarn just replace `npm start` and `npm run build` with `yarn 
 - Create a .env file in your root folder and put it
 
 ```
-EMAILJS_USER_ID = 'YOUR_USER_ID'
-EMAILJS_TEMPLATE_ID = 'template_blablabla'
-EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'
+VITE_EMAILJS_SERVICE=YOUR_SERVICE_ID
+VITE_EMAILJS_TEMPLATE=YOUR_TEMPLATE_ID
+VITE_EMAILJS_ID=YOUR_CLIENT_SECRET
 ```
 
 into it. Replace \*your user id, template Id and your service ID with the values provided from emailjs.
+- ```Remember to not use any quotes("/') in the value of .env```
 
 ## This project was made using Vite! Vite provides more faster experience than creat-react-app.<br />
 Read More [Here.](vitejs.dev)
