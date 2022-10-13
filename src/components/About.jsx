@@ -63,7 +63,7 @@ const About = () => {
         </motion.div>
       </div>
 
-      <div className="grid grid-cols-12 gap-4 md:gap-12 gap-y-[2rem] xl:px-0 sm:px-16 px-6 justify-between mb-0 lg:mb-12">
+      <div className="grid grid-cols-12 gap-4 md:gap-12 gap-y-[2rem] xl:px-0 sm:px-16 px-6 justify-between mb-0 lg:my-36">
         <motion.div
           variants={skillsVariants}
           initial="hidden"
