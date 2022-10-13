@@ -1,3 +1,6 @@
+# Watch the site live here
+[![Netlify Status](https://api.netlify.com/api/v1/badges/110eabe4-b581-4d30-8338-42ef870b0350/deploy-status)](https://app.netlify.com/sites/yt-portfolio-tutorial/deploys)
+
 # Portfolio for All
 This is a personal portfolio website made using <b>React.js</b> & <b>tailwind CSS.</b>
 If you want to edit this. Clone this project and edit the files in `/src/components`.<br />
