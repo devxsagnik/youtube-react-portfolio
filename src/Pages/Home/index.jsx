@@ -3,7 +3,7 @@ import styles from '../../style';
 
 const Home = () => {
   return (
-        <div className={`bg-primary ${styles.flexStart}`}>
+        <div className={`${styles.flexStart}`}>
           <div className={`${styles.boxWidth}`}>
             <Hero />
             <About />

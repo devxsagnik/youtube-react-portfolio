@@ -5,12 +5,14 @@ import {
 } from "../assets";
 
 export const name = "Amit"; //Change this to your own name;
+
 export const position = [
   {
     lat: 22.4881888235,
     long: 88.3565324968
   }
 ]; //Change this to the value you got from the website;
+
 export const navLinks = [
   {
     id: "home",

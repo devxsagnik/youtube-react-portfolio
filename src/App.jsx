@@ -9,7 +9,6 @@ import {
 } from './components';
 import styles from "./style";
 import {
-  Blog,
   Home,
   About,
   Contact,
@@ -29,7 +28,6 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/blogs/:id" element={<Blog />} />
           <Route path="*" element={<Error />} />
         </Routes>
       <div className={`${styles.boxWidth}`}>

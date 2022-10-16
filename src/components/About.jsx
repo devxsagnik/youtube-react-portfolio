@@ -40,7 +40,7 @@ const About = () => {
               About Me.
             </h2>
           </div>
-          <p className={`${styles.paragraph} text-[15px] leading-[25px] mt-5`}>
+          <p className={`${styles.paragraph} text-dimWhite text-[15px] leading-[25px] mt-5`}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
             temporibus rerum ad corrupti quia architecto excepturi incidunt unde
             consequatur ab. Lorem ipsum dolor, sit amet consectetur adipisicing
