@@ -22,6 +22,16 @@
   src: url('./assets/fonts/CoolveticaRg-Regular.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'Collingar';
+  src: url('./assets/fonts/collingar-collingar-400.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'hillray';
+  src: url('./assets/fonts/hillray-hillray-regular-700.ttf') format('ttf');
+}
+
 .header-gradient {
   background-image: linear-gradient(90deg, #47fdc3 0, #27c9bb 40%, #015eff 100%);
   background-clip: text;

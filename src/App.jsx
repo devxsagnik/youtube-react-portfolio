@@ -1,40 +1,33 @@
-import {
-  Route,
-  Routes,
-  Link
-} from 'react-router-dom';
-import {
-  Navbar,
-  Footer
-} from './components';
+import { Route, Routes, Link, useLocation } from "react-router-dom";
+
+import { Navbar, Footer } from "./components";
 import styles from "./style";
-import {
-  Home,
-  About,
-  Contact,
-  Error
-} from './Pages';
+import { Home, About, Contact, Error } from "./Pages";
+import { AnimatePresence } from "framer-motion";
 
 const App = () => {
-  
+  const location = useLocation();
+
   return (
     <div className="bg-[#111827] w-full overflow-hidden">
-        <div className={`${styles.paddingX} ${styles.flexCenter} mb-6`}>
+      <div className={`${styles.paddingX} ${styles.flexCenter} mb-6`}>
         <div className={`${styles.boxWidth} z-40`}>
-            <Navbar />
+          <Navbar />
         </div>
       </div>
-      <Routes>
+      <AnimatePresence exitBeforeEnter>
+        <Routes location={location} key={location.pathname}> 
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Error />} />
         </Routes>
+      </AnimatePresence>
       <div className={`${styles.boxWidth}`}>
-          <Footer />
+        <Footer />
       </div>
     </div>
-    );
-  };
+  );
+};
 
-  export default App
+export default App;

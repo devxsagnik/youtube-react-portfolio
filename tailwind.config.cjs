@@ -16,6 +16,8 @@ module.exports = {
         cartoon: ["Bangers", "cursive"],
         coolvetica: ["Coolvetica", "sans-serif"],
         syncopate: ["Syncopate", "sans-serif"],
+        collingar: ["Collingar", "sans-serif"],
+        hillray: ["hillray", "sans-serif"]
       },
     },
     screens: {

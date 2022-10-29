@@ -3,6 +3,8 @@ import { close, menu } from '../assets';
 import { navLinks, name } from '../constants';
 import { motion } from 'framer-motion';
 import { linkVariants, imageVariants } from '../animations';
+import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
 
@@ -31,9 +33,9 @@ const Navbar = () => {
               index === navLinks.length - 1 ? "mr-0" : "mr-10"
             } text-white nav-item`}
           >
-            <a className={`nav-link`} href={`${nav.link}`}>
+            <Link className={`nav-link`} to={`${nav.link}`}>
               {nav.title}
-            </a>
+            </Link>
           </motion.li>
         ))}
       </ul>

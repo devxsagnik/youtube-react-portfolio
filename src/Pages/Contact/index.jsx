@@ -70,7 +70,13 @@ const Contact = () => {
 
   return (
     <>
-      <section id="contact" className={`${styles.paddingY} contact-area`}>
+      <motion.section
+        initial={{ y: "100vh", opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: "100vh", opacity: 0 }}
+        id="contact"
+        className={`${styles.paddingY} contact-area`}
+      >
         <div
           className={`grid grid-cols-12 gap-4 xl:px-0 sm:px-16 px-6 justify-between mb-8 mt-2 xl:mt-6`}
         >
@@ -79,7 +85,8 @@ const Contact = () => {
               variants={contactFormVariants}
               initial="hidden"
               animate="show"
-              className="items-center w-full">
+              className="items-center w-full"
+            >
               <h2 className="text-[#08fdd8] text-[3.2rem] sm:text-[4.5rem] font-coolvetica tracking-wide leading-[6rem] font-medium">
                 Contact Me.
               </h2>
@@ -168,9 +175,13 @@ const Contact = () => {
             variants={contactMapVariants}
             initial="hidden"
             animate="show"
-            className="col-span-full lg:col-span-6">
+            className="col-span-full lg:col-span-6"
+          >
             <div className="map-wrap w-full px-6 sm:px-0">
-              <MapContainer center={[position[0].lat, position[0].long]} zoom={13}>
+              <MapContainer
+                center={[position[0].lat, position[0].long]}
+                zoom={13}
+              >
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                 <Marker position={[position[0].lat, position[0].long]}>
                   <Popup>Wanna have a coffee, come over here ;)</Popup>
@@ -179,7 +190,7 @@ const Contact = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
       <ToastContainer />
     </>
   );

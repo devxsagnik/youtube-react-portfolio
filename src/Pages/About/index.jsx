@@ -2,7 +2,6 @@ import styles from "../../style";
 import { skillsBar } from "../../constants";
 import { aboutImg } from "../../assets";
 import { motion } from "framer-motion";
-import { useScroll } from "../../contexts/useScroll";
 import {
   aboutVariants,
   aboutBannerVariants,
@@ -11,20 +10,22 @@ import {
 } from "../../animations";
 
 const About = () => {
-  const [element, controls] = useScroll();
 
   return (
-    <section
+    <motion.section
+      initial={{ y: "100vh", opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: "100vh", opacity: 0 }}
       id="about"
       className={`${styles.paddingY} about_wrapper bg-[#111827]`}
-      ref={element}
     >
       <div
         className={`grid grid-cols-12 gap-4 xl:px-0 sm:px-16 px-6 justify-between mb-8`}
       >
         <motion.div
           variants={aboutVariants}
-          animate={controls}
+          initial="hidden"
+          animate="show"
           className="mlg:col-span-6 smd:col-span-6 col-span-full"
         >
           <div className="items-center w-full">
@@ -49,7 +50,8 @@ const About = () => {
         <div className="md:col-span-6 col-span-full">
           <motion.div
             variants={aboutBannerVariants}
-            animate={controls}
+            initial="hidden"
+            animate="show"
             className="md:col-span-6 col-span-full relative mlg:top-[-8rem] top-0"
           >
             <img className="h-full w-full " src={aboutImg} alt="about-img" />
@@ -115,7 +117,7 @@ const About = () => {
           ))}
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
