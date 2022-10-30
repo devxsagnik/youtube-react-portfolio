@@ -40,7 +40,9 @@ const About = () => {
               About Me.
             </h2>
           </div>
-          <p className={`${styles.paragraph} text-dimWhite text-[15px] leading-[25px] mt-5`}>
+          <p
+            className={`${styles.paragraph} text-dimWhite text-[15px] leading-[25px] mt-5`}
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
             temporibus rerum ad corrupti quia architecto excepturi incidunt unde
             consequatur ab. Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -57,9 +59,13 @@ const About = () => {
         <motion.div
           variants={aboutBannerVariants}
           animate={controls}
-          className="md:col-span-6 col-span-full relative mlg:top-[-8rem] top-0"
+          className="md:col-span-6 rounded-[2rem] col-span-full aspect-square lg:w-[70%] sm:w-[50%] w-full sm:mx-auto mx-0 py-10 lg:py-0"
         >
-          <img className="h-full w-full" src={aboutImg} alt="about-img" />
+          <img
+            className="rounded-[2rem] items-center justify-center"
+            src={aboutImg}
+            alt="about-img"
+          />
         </motion.div>
       </div>
 

@@ -10,7 +10,6 @@ import {
 } from "../../animations";
 
 const About = () => {
-
   return (
     <motion.section
       initial={{ y: "100vh", opacity: 0 }}
@@ -20,7 +19,7 @@ const About = () => {
       className={`${styles.paddingY} about_wrapper bg-[#111827]`}
     >
       <div
-        className={`grid grid-cols-12 gap-4 xl:px-0 sm:px-16 px-6 justify-between mb-8`}
+        className={`grid grid-cols-12 gap-4 xl:px-0 sm:px-16 px-6 justify-between my-8 py-4`}
       >
         <motion.div
           variants={aboutVariants}
@@ -47,19 +46,21 @@ const About = () => {
             itaque ipsam quisquam ipsa.
           </p>
         </motion.div>
-        <div className="md:col-span-6 col-span-full">
-          <motion.div
-            variants={aboutBannerVariants}
-            initial="hidden"
-            animate="show"
-            className="md:col-span-6 col-span-full relative mlg:top-[-8rem] top-0"
-          >
-            <img className="h-full w-full " src={aboutImg} alt="about-img" />
-          </motion.div>
-        </div>
+        <motion.div
+          variants={aboutBannerVariants}
+          initial="hidden"
+          animate="show"
+          className="md:col-span-6 rounded-[2rem] col-span-full aspect-square lg:w-[70%] sm:w-[50%] w-full sm:mx-auto mx-0 py-10 lg:py-0"
+        >
+          <img
+            className="rounded-[2rem] items-center justify-center"
+            src={aboutImg}
+            alt="about-img"
+          />
+        </motion.div>
       </div>
 
-      <div className="grid grid-cols-12 gap-4 md:gap-12 gap-y-[2rem] xl:px-0 sm:px-16 px-6 justify-between mb-0 lg:mb-12">
+      <div className="grid grid-cols-12 gap-4 md:gap-12 gap-y-[2rem] xl:px-0 sm:px-16 px-6 justify-between mb-0 lg:mb-12 lg:my-36">
         <motion.div
           variants={skillsVariants}
           initial="hidden"
