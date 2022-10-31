@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar mt-5">
+    <nav className={`w-full flex py-6 justify-between items-center navbar mt-5`}>
       <motion.h5
         variants={imageVariants}
         animate="visible"
@@ -53,8 +53,8 @@ const Navbar = () => {
         <motion.div
           animate={toggle ? "open" : "closed"}
           variants={navBarToggle}
-          transition={{ duration: 1, delay: 0.2, type: "spring", bounce: 0.2 }}
-          className={`flex p-6 bg-black-gradient absolute top-20 left-0 my-2 w-full rounded-xl sidebar min-h-[50vh]`}
+          transition={{ duration: 0.4, type: "tween", bounce: 0.2 }}
+          className={`flex p-6 bg-slate-700 shadow-lg absolute top-20 left-0 my-2 w-full rounded-l sidebar min-h-[50vh] overflow-hidden backdrop-blur-2xl`}
         >
           <ul className="list-none flex flex-col justify-center items-center flex-1">
             {navLinks.map((nav, index) => (
@@ -66,7 +66,11 @@ const Navbar = () => {
                 key={nav.id}
                 className={`font-poppins font-normal cursor-pointer text-[28px] text-white nav-item my-6`}
               >
-                <Link className="nav-link" to={`${nav.link}`}>
+                <Link
+                  className="nav-link"
+                  to={`${nav.link}`}
+                  onClick={() => setToggle(false)}
+                >
                   {nav.title}
                 </Link>
               </motion.li>
