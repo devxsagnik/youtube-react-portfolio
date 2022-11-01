@@ -9,7 +9,7 @@ const Path = ({ openPath, closedPath, ...rest }) => {
       strokeLinecap="round"
       variants={{
         open: { d: openPath, transition: { duration: 0.3 } },
-        closed: { d: closedPath, transition: { duration: 0.3 } },
+        closed: { d: closedPath, transition: { duration: 0.2, delay: 0.1 } },
       }}
       {...rest}
     ></motion.path>

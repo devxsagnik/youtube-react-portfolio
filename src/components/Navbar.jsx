@@ -64,7 +64,7 @@ const Navbar = () => {
               <motion.li
                 variants={mobileLinkVariant}
                 key={nav.id}
-                className={`font-poppins font-normal cursor-pointer text-[28px] text-white nav-item my-6 shadow-none`}
+                className={`font-collingar font-[600] cursor-pointer text-[28px] text-white nav-item my-6 shadow-none`}
               >
                 <Link
                   className="nav-link"

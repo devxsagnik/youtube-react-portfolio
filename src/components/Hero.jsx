@@ -19,7 +19,7 @@ const Hero = () => {
       >
         <div className="flex flex-row justify-between items-center w-full">
           <h1 className="flex-1 font-outfit font-bold ss:text-[72px] text-[52px] text-white ss:leading-[100.8px] leading-[75px]">
-            Hi, <br className="sm:block hidden" />{" "}
+            Hi, <br className="block" />{" "}
             <span className="header-gradient">I'm {name}</span>{" "}
           </h1>
         </div>
