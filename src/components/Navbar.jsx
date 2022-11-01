@@ -1,19 +1,24 @@
 import { useState } from "react";
 import { close, menu } from "../assets";
 import { navLinks, name } from "../constants";
-import { AnimatePresence, motion } from "framer-motion";
-import { linkVariants, imageVariants } from "../animations";
+import { AnimatePresence, motion, useCycle } from "framer-motion";
+import {
+  navBarToggle,
+  linkVariants,
+  ulLinkVariant,
+  mobileLinkVariant,
+  imageVariants,
+} from "../animations";
+import MenuToggler from "../contexts/MenuToggler";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false);
-  const navBarToggle = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 0.5, x: "-100%" },
-  };
+  const [toggle, setToggle] = useCycle(false, true);
 
   return (
-    <nav className={`w-full flex py-6 justify-between items-center navbar mt-5`}>
+    <nav
+      className={`w-full flex py-6 justify-between items-center navbar mt-5`}
+    >
       <motion.h5
         variants={imageVariants}
         animate="visible"
@@ -43,28 +48,23 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <div className="sm:hidden flex flex-1 justify-end items-center">
-        <img
-          src={toggle ? close : menu}
-          alt="menu"
-          className="w-[28px] h-[28px] object-contain"
-          onClick={() => setToggle((prev) => !prev)}
-        />
+      <motion.div
+        initial={false}
+        animate={toggle ? "open" : "closed"}
+        className="sm:hidden flex flex-1 justify-end items-center">
+        <MenuToggler toggle={() => setToggle()} />
         <motion.div
-          animate={toggle ? "open" : "closed"}
           variants={navBarToggle}
-          transition={{ duration: 0.4, type: "tween", bounce: 0.2 }}
-          className={`flex p-6 bg-slate-700 shadow-lg absolute top-20 left-0 my-2 w-full rounded-l sidebar min-h-[50vh] overflow-hidden backdrop-blur-2xl`}
+          className={`flex p-6 bg-slate-900/40 backdrop-blur-md absolute top-20 left-0 opacity-0 my-2 w-full rounded-xl min-h-[50vh] overflow-hidden`}
         >
-          <ul className="list-none flex flex-col justify-center items-center flex-1">
+          <motion.ul
+            variants={ulLinkVariant}
+            className="list-none flex flex-col justify-center items-center flex-1">
             {navLinks.map((nav, index) => (
               <motion.li
-                custom={index}
-                animate="visible"
-                variants={linkVariants}
-                initial="hidden"
+                variants={mobileLinkVariant}
                 key={nav.id}
-                className={`font-poppins font-normal cursor-pointer text-[28px] text-white nav-item my-6`}
+                className={`font-poppins font-normal cursor-pointer text-[28px] text-white nav-item my-6 shadow-none`}
               >
                 <Link
                   className="nav-link"
@@ -75,9 +75,9 @@ const Navbar = () => {
                 </Link>
               </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         </motion.div>
-      </div>
+      </motion.div>
     </nav>
   );
 };
