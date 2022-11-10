@@ -2,7 +2,7 @@ import { Route, Routes, Link, useLocation } from "react-router-dom";
 
 import { Navbar, Footer } from "./components";
 import styles from "./style";
-import { Home, About, Contact, Error } from "./Pages";
+import { Home, About, Contact, Blog, Error } from "./Pages";
 import { AnimatePresence } from "framer-motion";
 
 const App = () => {
@@ -20,6 +20,7 @@ const App = () => {
           <Route path="/" exact element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blogs" element={<Blog />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </AnimatePresence>

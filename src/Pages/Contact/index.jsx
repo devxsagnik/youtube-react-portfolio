@@ -87,7 +87,7 @@ const Contact = () => {
               animate="show"
               className="items-center w-full"
             >
-              <h2 className="text-[#08fdd8] text-[3.2rem] sm:text-[4.5rem] font-coolvetica tracking-wide leading-[6rem] font-medium">
+              <h2 className="text-[#08fdd8] text-[3.2rem] sm:text-[4.5rem] font-collingar leading-[6rem] font-bold">
                 Contact Me.
               </h2>
               <p

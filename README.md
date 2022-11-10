@@ -33,6 +33,10 @@ Read More [Here.](vitejs.dev)
 
 ## Some Basic Commands -
 
+### `npm i`
+
+Install's all the modules required to run.
+
 ### `npm run dev`
 
 Runs the app in the development mode.\
@@ -47,6 +51,15 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+# Basic Setup for the Project
+
+- ## Getting your site name and image
+
+ 1. Go to index.html in your root folder.
+2. Then in title change the name to your specified site name.
+3. Then go to public directory and add a png file of your desired image to be shown in the site and rename it to favicon.png(If any other file format used please change it in the link tag in index.html).
+
 
 ## Contributing
 

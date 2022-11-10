@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { close, menu } from "../assets";
 import { navLinks, name } from "../constants";
 import { AnimatePresence, motion, useCycle } from "framer-motion";
 import {

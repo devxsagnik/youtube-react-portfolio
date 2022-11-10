@@ -13,8 +13,6 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         outfit: ["Outfit", "sans-serif"],
-        cartoon: ["Bangers", "cursive"],
-        coolvetica: ["Coolvetica", "sans-serif"],
         syncopate: ["Syncopate", "sans-serif"],
         collingar: ["Collingar", "sans-serif"],
         hillray: ["hillray", "sans-serif"]

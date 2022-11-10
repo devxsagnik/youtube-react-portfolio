@@ -1,5 +1,6 @@
 import styles from "../../style";
 import { page404 } from "../../assets";
+import { Link } from "react-router-dom";
 
 const Error = () => {
   return (
@@ -21,17 +22,17 @@ const Error = () => {
             help you get back to reading something about me:
             <br />
             <br />
-            <a href="/" className="text-[#08fdd8]">
+            <Link to="/" className="text-[#08fdd8]">
               • Get back to Home
-            </a>
+            </Link>
             <br />
-            <a href="/about" className="text-[#08fdd8]">
+            <Link to="/about" className="text-[#08fdd8]">
               • Read about me
-            </a>
+            </Link>
             <br />
-            <a href="/contact" className="text-[#08fdd8]">
+            <Link to="/contact" className="text-[#08fdd8]">
               • Contact Me
-            </a>
+            </Link>
           </p>
         </div>
         <div className={`md:col-span-6 col-span-full ${styles.flexCenter}`}>
